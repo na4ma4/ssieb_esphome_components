@@ -97,8 +97,8 @@ void HT16K33AlphaDisplay::set_brightness(float level) {
     if (val == 0) {
       display->write_bytes(DISPLAY_COMMAND_DISPLAY_OFF, nullptr, 0);
     } else {
-      display->write_bytes(DISPLAY_COMMAND_DIMMING | (val - 1), nullptr, 0);
       display->write_bytes(DISPLAY_COMMAND_DISPLAY_ON, nullptr, 0);
+      display->write_bytes(DISPLAY_COMMAND_DIMMING | (val - 1), nullptr, 0);
     }
   }
 }
